@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentiment Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sentiment Analysis Tool</h1>
+    <div class="button-group">
+      <button onclick="document.getElementById('fileInput').click()">Upload CSV</button>
+      <input type="file" id="fileInput" accept=".csv" style="display:none">
+      <input type="text" id="keywordInput" placeholder="Enter keyword (e.g., watch, kids)">
+      <button onclick="toggleTheme()" id="themeToggleBtn">
+        <span id="themeIcon">&#9728;</span>
+      </button>
+    </div>
+
+    <div id="loader" class="loader" style="display:none;"></div>
+
+    <button onclick="analyzeSentiment()" id="analyzeBtn">Analyze Sentiment</button>
+
+    <canvas id="sentimentChart"></canvas>
+
+    <div id="errorMessage" class="error"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
